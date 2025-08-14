@@ -1,0 +1,92 @@
+{
+  "name": "react-native-battery-info",
+  "version": "0.1.0",
+  "description": "React Native TurboModule for static and dynamic battery information — get battery percentage, charging status, temperature, voltage, and more, with real-time event listeners and an easy-to-use hook API.",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.tsx",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "cpp",
+    "react-native.config.js",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "release": "release-it --only-version"
+  },
+  "keywords": [
+    "react-native",
+    "android"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/Stephenjoe10/react-native-battery-info/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephenjoe10/react-native-battery-info.git"
+  },
+  "author": "Stephenjoe10 (https://github.com/Stephenjoe10)",
+  "license": "MIT",
+  "homepage": "https://github.com/Stephenjoe10/react-native-battery-info#readme",
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "react-native-builder-bob": "^0.40.8",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "codegenConfig": {
+    "name": "BatteryInfoSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.batteryinfo"
+    }
+  }
+}
