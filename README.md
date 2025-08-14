@@ -57,26 +57,22 @@ export default function BatteryInfoView() {
 
 ### 2️⃣ Using EventEmitter Directly (For Advanced Control)
 Use `EventNativeBattery` when you want to manually subscribe/unsubscribe from updates.
+listener event name `OnBatteryChange`
 
 ```tsx
 import { useEffect } from "react";
-import { EventNativeBattery, NativeBattery } from "react-native-battery-info-pro";
+import { EventNativeBattery } from "react-native-battery-info-pro";
+import type { batteryEmitterType } from "../types/batteryinfoType";
 
 export default function BatteryListener() {
   useEffect(() => {
     // Subscribe to real-time updates
     const subscription = EventNativeBattery.addListener(
       "OnBatteryChange",
-      (data) => {
+      (data:batteryEmitterType) => {
         console.log("Dynamic Battery Data:", data);
       }
     );
-
-    // Fetch static info once
-    (async () => {
-      const staticInfo = await NativeBattery.getBatteryInfo();
-      console.log("Static Battery Info:", staticInfo);
-    })();
 
     // Cleanup
     return () => subscription.remove();
@@ -87,6 +83,44 @@ export default function BatteryListener() {
 ```
 
 ---
+
+### 3️⃣ Using Static battery info api (Recommended for static info only)
+The `getBatteryInfo` api is used to fetch the static battery info data.
+
+```tsx
+import { NativeBattery } from "react-native-battery-info-pro";
+import { View, Text } from "react-native";
+import type { batteryInfoType } from "../types/batteryinfoType";
+
+export default function BatteryStaticInfoView() {
+  const [staticData, setStaticData] = useState<batteryInfoType>();
+
+  useEffect(() => {
+		  fetchStaticInfo();
+	}, []);
+
+// Fetch static info once
+  const fetchStaticInfo = async () => {
+		try {
+			const info = await NativeBattery?.getBatteryInfo();
+			setStaticData(info);
+		} catch (error) {
+			console.error("Failed to get battery info:", error);
+		}
+	};
+
+  return (
+    <View>
+      <Text>Battery health is Good: {staticData?.batteryHealth?.isGood ? "yes":"no"}</Text>
+      <Text>Battery Technology: {staticData?.batteryTechnology}</Text>
+      <Text>Battery Scale: {staticData?.batteryScale}</Text>
+    </View>
+  );
+}
+```
+
+---
+
 
 ## 🔍 API Types
 
