@@ -38,7 +38,16 @@
   },
   "keywords": [
     "react-native",
-    "android"
+    "android",
+    "ios",
+    "battery",
+    "batteryinfo",
+    "batteryStatus",
+    "TurboModule",
+    "Dynamic battery info",
+    "Static battery info",
+    "React Native TurboModule",
+    "Event listener"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
