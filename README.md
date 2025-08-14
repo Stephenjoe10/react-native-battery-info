@@ -5,6 +5,12 @@ Supports listening to battery status changes in real time.
 
 ---
 
+## 📰 News
+> **Note:** This package is currently available **only for Android**.  
+> iOS support is planned for future releases.
+
+---
+
 ## ✨ Features
 
 - 🔋 **Static battery info** – Technology, scale, health, etc.
