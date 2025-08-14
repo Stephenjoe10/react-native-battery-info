@@ -23,9 +23,9 @@ Supports listening to battery status changes in real time.
 ## 📦 Installation
 
 ```sh
-npm install react-native-battery-info
+npm install react-native-battery-info-pro
 # or
-yarn add react-native-battery-info
+yarn add react-native-battery-info-pro
 ```
 
 ---
@@ -36,7 +36,7 @@ yarn add react-native-battery-info
 The `useBatteryInfo` hook merges static and dynamic battery data automatically and re-renders when values change.
 
 ```tsx
-import { useBatteryInfo } from "react-native-battery-info";
+import { useBatteryInfo } from "react-native-battery-info-pro";
 import { View, Text } from "react-native";
 
 export default function BatteryInfoView() {
@@ -60,7 +60,7 @@ Use `EventNativeBattery` when you want to manually subscribe/unsubscribe from up
 
 ```tsx
 import { useEffect } from "react";
-import { EventNativeBattery, NativeBattery } from "react-native-battery-info";
+import { EventNativeBattery, NativeBattery } from "react-native-battery-info-pro";
 
 export default function BatteryListener() {
   useEffect(() => {
