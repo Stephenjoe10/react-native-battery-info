@@ -1,6 +1,6 @@
 {
   "name": "react-native-battery-info-pro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native TurboModule for static and dynamic battery information — get battery percentage, charging status, temperature, voltage, and more, with real-time event listeners and an easy-to-use hook API.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
