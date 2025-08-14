@@ -93,14 +93,14 @@ import { View, Text } from "react-native";
 import type { batteryInfoType } from "../types/batteryinfoType";
 
 export default function BatteryStaticInfoView() {
-  const [staticData, setStaticData] = useState<batteryInfoType>();
+	const [staticData, setStaticData] = useState<batteryInfoType>();
 
-  useEffect(() => {
-		  fetchStaticInfo();
+	useEffect(() => {
+		fetchStaticInfo();
 	}, []);
 
-// Fetch static info once
-  const fetchStaticInfo = async () => {
+	// Fetch static info once
+	const fetchStaticInfo = async () => {
 		try {
 			const info = await NativeBattery?.getBatteryInfo();
 			setStaticData(info);
@@ -109,13 +109,13 @@ export default function BatteryStaticInfoView() {
 		}
 	};
 
-  return (
-    <View>
-      <Text>Battery health is Good: {staticData?.batteryHealth?.isGood ? "yes":"no"}</Text>
-      <Text>Battery Technology: {staticData?.batteryTechnology}</Text>
-      <Text>Battery Scale: {staticData?.batteryScale}</Text>
-    </View>
-  );
+	return (
+		<View>
+			<Text>Battery health is Good: {staticData?.batteryHealth?.isGood ? "yes" : "no"}</Text>
+			<Text>Battery Technology: {staticData?.batteryTechnology}</Text>
+			<Text>Battery Scale: {staticData?.batteryScale}</Text>
+		</View>
+	);
 }
 ```
 
