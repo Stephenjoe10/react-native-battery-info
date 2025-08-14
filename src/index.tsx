@@ -6,7 +6,7 @@
 export { useBatteryInfo } from "./hook/useBatteryInfo";
 
 // Types
-export type { batteryInfoType } from "./types/batteryinfoType";
+export type { batteryInfoType, batteryEmitterType } from "./types/batteryinfoType";
 
 // Native Module
 export {
